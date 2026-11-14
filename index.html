@@ -41,7 +41,13 @@
     .cs-tag { font-size: 0.78rem; color: #93c5fd; font-weight: 700; margin-bottom: 8px; word-break: break-word; }
     .cs-card h3 { margin: 0 0 12px; font-size: 1.18rem; color: #f8fafc; }
     .cs-card p { margin: 0 0 10px; font-size: 0.92rem; color: #cbd5e1; }
-    .cs-card p.impact { color: #34d399; border-left: 3px solid #10b981; background: rgba(16, 185, 129, 0.10); padding: 8px 12px; border-radius: 0 8px 8px 0; margin-top: 2px; margin-bottom: 0; }
+    .cs-card p.what { margin: 0 0 10px; color: #cbd5e1; }
+    .cs-card p.problem { color: #fca5a5; border-left: 3px solid #ef4444; background: rgba(239, 68, 68, 0.08); padding: 8px 12px; border-radius: 0 8px 8px 0; margin: 0 0 8px; }
+    .cs-card p.problem strong { color: #f87171; }
+    .cs-card p.solution { color: #bae6fd; border-left: 3px solid #0ea5e9; background: rgba(14, 165, 233, 0.08); padding: 8px 12px; border-radius: 0 8px 8px 0; margin: 0 0 8px; }
+    .cs-card p.solution strong { color: #38bdf8; }
+    .cs-card p.impact { color: #6ee7b7; border-left: 3px solid #10b981; background: rgba(16, 185, 129, 0.10); padding: 8px 12px; border-radius: 0 8px 8px 0; margin: 0; }
+    .cs-card p.impact strong { color: #34d399; }
     .footer { border-top: 1px solid #1e293b; padding-top: 18px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.84rem; color: #94a3b8; }
     .lightbox { display: none; position: fixed; inset: 0; background: rgba(2, 6, 23, 0.92); z-index: 9999; align-items: center; justify-content: center; padding: 24px; }
     .lightbox.open { display: flex; }
@@ -89,9 +95,9 @@
               <div class="cs-body">
                 <div class="cs-tag">CS-01 &bull; Python, MS Graph API (MSAL), Power Automate, openpyxl, SFTP (paramiko), smtplib</div>
                 <h3>InstaShop Automated Branch Stock Sync Pipeline (Every 1.5 Hours)</h3>
-                <p><strong>What It Is:</strong> An unattended cloud-to-SFTP automation service that updates branch product availability and stock levels on InstaShop automatically every 1.5 hours.</p>
-                <p><strong>Problem:</strong> Staff had to manually format and upload Excel files only once every 24 hours, leaving branch stock outdated throughout the day.</p>
-                <p><strong>Solution:</strong> Built a Power Automate + MS Graph API (MSAL) -&gt; Python (openpyxl) branch-code validator -&gt; paramiko SFTP pipeline with OneDrive staging cleanup, packaged vs. bulk produce checks, and smtplib error/log email alerts.</p>
+                <p class="what"><strong>What It Is:</strong> An unattended cloud-to-SFTP automation service that updates branch product availability and stock levels on InstaShop automatically every 1.5 hours.</p>
+                <p class="problem"><strong>Problem:</strong> Staff had to manually format and upload Excel files only once every 24 hours, leaving branch stock outdated throughout the day.</p>
+                <p class="solution"><strong>Solution:</strong> Built a Power Automate + MS Graph API (MSAL) -&gt; Python (openpyxl) branch-code validator -&gt; paramiko SFTP pipeline with OneDrive staging cleanup, packaged vs. bulk produce checks, and smtplib error/log email alerts.</p>
                 <p class="impact"><strong>Impact:</strong> Automated InstaShop stock updates to run every 1.5 hours instead of once every 24 hours (16x more frequent inventory updates) with zero manual spreadsheet uploads.</p>
               </div>
             </article>
@@ -103,9 +109,9 @@
               <div class="cs-body">
                 <div class="cs-tag">CS-02 &bull; D365 F&amp;O (OData, BYOD, Dataflows), Python, Polars, DuckDB, MS SQL, MySQL, openpyxl</div>
                 <h3>Dynamics 365 F&amp;O Financial Close &amp; Delivery P&amp;L Automation Suite</h3>
-                <p><strong>What It Is:</strong> A unified Python ETL and automated Excel reporting engine powering daily and monthly financial close across retail branches.</p>
-                <p><strong>Problem:</strong> Extracting and merging P&amp;L, Delivery P&amp;L, General Ledger (GL), Accounts Receivable (AR), and Tax reports from D365 F&amp;O, MS SQL, and MySQL manually slowed down closing.</p>
-                <p><strong>Solution:</strong> Engineered repeatable Python (Polars &amp; DuckDB) pipelines pulling directly from Dynamics 365 F&amp;O (OData, BYOD, Dataflows) and SQL Server to generate standardized Dashboard_YYYY-MM-DD and Delivery_Dashboard workbooks automatically.</p>
+                <p class="what"><strong>What It Is:</strong> A unified Python ETL and automated Excel reporting engine powering daily and monthly financial close across retail branches.</p>
+                <p class="problem"><strong>Problem:</strong> Extracting and merging P&amp;L, Delivery P&amp;L, General Ledger (GL), Accounts Receivable (AR), and Tax reports from D365 F&amp;O, MS SQL, and MySQL manually slowed down closing.</p>
+                <p class="solution"><strong>Solution:</strong> Engineered repeatable Python (Polars &amp; DuckDB) pipelines pulling directly from Dynamics 365 F&amp;O (OData, BYOD, Dataflows) and SQL Server to generate standardized Dashboard_YYYY-MM-DD and Delivery_Dashboard workbooks automatically.</p>
                 <p class="impact"><strong>Impact:</strong> Automated 12+ daily and monthly finance/operations workflows including P&amp;L, GL, AR, Tax, Cost Control, Household Sales, and Promotion/Magazine cycle analytics.</p>
               </div>
             </article>
@@ -117,9 +123,9 @@
               <div class="cs-body">
                 <div class="cs-tag">CS-03 &bull; DuckDB, Polars, SQL, 3-Way Match Reconciliation, Cost Control, Audit Automation</div>
                 <h3>Automated 3-Way Match Procurement &amp; Retail Control Workbench</h3>
-                <p><strong>What It Is:</strong> An automated procurement auditing system matching Purchase Orders (PO), Goods Receipts (GRN), and Vendor Invoices before payment.</p>
-                <p><strong>Problem:</strong> Manual invoice verification risked paying for unreceipted goods, unit-price overcharges, and missed vendor consignment discrepancies.</p>
-                <p><strong>Solution:</strong> Built DuckDB &amp; Polars pre-aggregation matching Receipts vs. Invoices at the (po_number, sku) level alongside automated Daily Waste Reports, Lost Sales Digests, Daily Stock Control, and Consignment Vendor Settlement audits.</p>
+                <p class="what"><strong>What It Is:</strong> An automated procurement auditing system matching Purchase Orders (PO), Goods Receipts (GRN), and Vendor Invoices before payment.</p>
+                <p class="problem"><strong>Problem:</strong> Manual invoice verification risked paying for unreceipted goods, unit-price overcharges, and missed vendor consignment discrepancies.</p>
+                <p class="solution"><strong>Solution:</strong> Built DuckDB &amp; Polars pre-aggregation matching Receipts vs. Invoices at the (po_number, sku) level alongside automated Daily Waste Reports, Lost Sales Digests, Daily Stock Control, and Consignment Vendor Settlement audits.</p>
                 <p class="impact"><strong>Impact:</strong> Replaced manual invoice checks with automated exception flagging across procurement, inventory waste, and vendor consignment settlements.</p>
               </div>
             </article>
@@ -131,9 +137,9 @@
               <div class="cs-body">
                 <div class="cs-tag">CS-04 &bull; Power BI, DAX, Star-Schema Data Modeling, MS SQL, MySQL, Power Query</div>
                 <h3>Power BI Star-Schema Restructuring &amp; DAX / SQL Optimization</h3>
-                <p><strong>What It Is:</strong> A full performance overhaul of company-wide executive Power BI dashboards tracking Finance, Marketing, and Operations KPIs.</p>
-                <p><strong>Problem:</strong> Flat table models, heavy calculated columns, and unindexed SQL queries caused slow dashboard refreshes and sluggish visual interactions.</p>
-                <p><strong>Solution:</strong> Redesigned relational star-schema data models, pushed heavy joins into tuned MS SQL / MySQL views, and refactored complex DAX measures.</p>
+                <p class="what"><strong>What It Is:</strong> A full performance overhaul of company-wide executive Power BI dashboards tracking Finance, Marketing, and Operations KPIs.</p>
+                <p class="problem"><strong>Problem:</strong> Flat table models, heavy calculated columns, and unindexed SQL queries caused slow dashboard refreshes and sluggish visual interactions.</p>
+                <p class="solution"><strong>Solution:</strong> Redesigned relational star-schema data models, pushed heavy joins into tuned MS SQL / MySQL views, and refactored complex DAX measures.</p>
                 <p class="impact"><strong>Impact:</strong> Accelerated Power BI and SQL report loading speeds by 60% for Finance, Marketing, and Operations leadership.</p>
               </div>
             </article>
@@ -145,9 +151,9 @@
               <div class="cs-body">
                 <div class="cs-tag">CS-05 &bull; Python, Retail POS, Inventory Tracking, Receipt Automation, Local SQL</div>
                 <h3>End-to-End Retail Python POS &amp; Inventory Management System</h3>
-                <p><strong>What It Is:</strong> A standalone Point-of-Sale (POS) and inventory tracking desktop application engineered for small and medium retail shops (2023–2025).</p>
-                <p><strong>Problem:</strong> Small retail shops lacked affordable software connecting checkout sales directly with live stock counts and daily cash-close reports.</p>
-                <p><strong>Solution:</strong> Designed and built a complete Python POS application covering barcode/SKU lookup, automated cart/tax calculation, real-time inventory deduction, and receipt printing.</p>
+                <p class="what"><strong>What It Is:</strong> A standalone Point-of-Sale (POS) and inventory tracking desktop application engineered for small and medium retail shops (2023–2025).</p>
+                <p class="problem"><strong>Problem:</strong> Small retail shops lacked affordable software connecting checkout sales directly with live stock counts and daily cash-close reports.</p>
+                <p class="solution"><strong>Solution:</strong> Designed and built a complete Python POS application covering barcode/SKU lookup, automated cart/tax calculation, real-time inventory deduction, and receipt printing.</p>
                 <p class="impact"><strong>Impact:</strong> Delivered reliable sales ledger capture, automated stock updates, and daily close reporting without recurring SaaS licensing fees.</p>
               </div>
             </article>
