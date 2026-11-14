@@ -7,26 +7,30 @@
   <style>
     * { box-sizing: border-box; }
     body { font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif; background: #070d1a; color: #f1f5f9; margin: 0; padding: 32px 20px 56px; line-height: 1.6; }
-    .wrap { max-width: 1180px; margin: 0 auto; }
+    .wrap { max-width: 1220px; margin: 0 auto; }
     .hero { background: linear-gradient(135deg, #0f172a 0%, #172554 100%); border: 1px solid #1e293b; border-bottom: 3px solid #10b981; border-radius: 16px; padding: 30px 32px; margin-bottom: 24px; box-shadow: 0 18px 40px rgba(0,0,0,0.35); }
     .eyebrow { display: inline-block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #34d399; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); padding: 4px 10px; border-radius: 999px; margin-bottom: 10px; }
     h1 { font-size: 1.95rem; margin: 0 0 8px; letter-spacing: -0.01em; color: #ffffff; }
-    .sub { color: #cbd5e1; font-size: 1rem; margin-bottom: 18px; max-width: 920px; }
+    .sub { color: #cbd5e1; font-size: 1.02rem; margin-bottom: 18px; max-width: 960px; }
     .cta-bar { display: flex; flex-wrap: wrap; gap: 10px; }
     .cta { padding: 10px 16px; border-radius: 9px; text-decoration: none; font-weight: 700; font-size: 0.88rem; color: #e2e8f0; background: #1e293b; border: 1px solid #334155; transition: transform 0.15s ease, border-color 0.15s ease; }
     .cta:hover { transform: translateY(-1px); border-color: #38bdf8; }
     .cta.primary { background: #10b981; color: #052e16; border-color: #10b981; }
     .kpi-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 26px; }
     .kpi { background: #0f172a; border: 1px solid #1e293b; border-radius: 14px; padding: 18px 20px; }
-    .kpi strong { display: block; font-size: 1.55rem; color: #38bdf8; margin-bottom: 4px; }
+    .kpi strong { display: block; font-size: 1.45rem; color: #38bdf8; margin-bottom: 4px; }
     .kpi span { font-size: 0.86rem; color: #94a3b8; }
     .section-head { font-size: 1.15rem; font-weight: 700; color: #e2e8f0; margin: 0 0 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
     .section-note { font-size: 0.82rem; color: #94a3b8; font-weight: 500; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 18px; margin-bottom: 26px; }
-    .cs-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 14px; padding: 20px 22px; transition: border-color 0.18s ease; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)); gap: 20px; margin-bottom: 26px; }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+    .cs-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 14px; overflow: hidden; transition: border-color 0.18s ease; display: flex; flex-direction: column; }
     .cs-card:hover { border-color: #38bdf8; }
+    .cs-visual { background: #070d1a; border-bottom: 1px solid #1e293b; }
+    .cs-img { width: 100%; height: auto; display: block; }
+    .cs-body { padding: 20px 22px; }
     .cs-tag { font-size: 0.78rem; color: #38bdf8; font-weight: 700; margin-bottom: 8px; }
-    .cs-card h3 { margin: 0 0 12px; font-size: 1.08rem; color: #ffffff; }
+    .cs-card h3 { margin: 0 0 12px; font-size: 1.12rem; color: #ffffff; }
     .cs-card p { margin: 0 0 9px; font-size: 0.9rem; color: #cbd5e1; }
     .cs-card p.impact { color: #34d399; margin-bottom: 0; }
     .footer { border-top: 1px solid #1e293b; padding-top: 18px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.84rem; color: #94a3b8; }
@@ -37,7 +41,7 @@
     <section class="hero">
       <div class="eyebrow">B.Sc. Mechatronics Engineering (Grade: A+) &bull; Microsoft Certified Power BI &amp; D365 F&amp;O</div>
       <h1>Yahia Hosny Yahia — Financial Data Analyst &amp; Python Data Automation Specialist</h1>
-      <div class="sub">Production Retail/FMCG Financial Close, 3-Way Match Procurement Control &amp; Microsoft Dynamics 365 F&amp;O Automation Case Studies &bull; Zero-Leakage Architecture (Control Tie-Out: 0.00 Drift)</div>
+      <div class="sub">I build automated financial reporting pipelines, ERP data integrations (Microsoft Dynamics 365 F&amp;O &amp; SQL), interactive Power BI dashboards, and procurement/inventory reconciliation systems that eliminate manual spreadsheet work.</div>
       <div class="cta-bar">
         <a class="cta primary" href="cv_optimized_100.pdf" download="Yahia_Hosny_CV.pdf" target="_blank">Download 1-Page ATS CV (.pdf)</a>
         <a class="cta" href="mailto:Yahiahosny23@gmail.com">Yahiahosny23@gmail.com</a>
@@ -49,59 +53,79 @@
     </section>
 
     <section class="kpi-strip">
-      <div class="kpi"><strong>1.5 Hours (16x)</strong><span>Automated InstaShop SFTP Stock Sync (down from 24h manual)</span></div>
-      <div class="kpi"><strong>60% Faster</strong><span>Power BI Star-Schema DAX &amp; SQL Query Execution Speed</span></div>
-      <div class="kpi"><strong>95% Accuracy</strong><span>Python (Pandas &amp; Scikit-learn) Sales Revenue Forecasting</span></div>
-      <div class="kpi"><strong>12+ Workflows</strong><span>Automated D365 F&amp;O Financial Close, P&amp;L &amp; 3-Way Match</span></div>
+      <div class="kpi"><strong>1.5 Hours (16x Faster)</strong><span>InstaShop Stock Sync (Reduced from 24h Daily Upload)</span></div>
+      <div class="kpi"><strong>60% Faster Loading</strong><span>Power BI Star-Schema DAX &amp; SQL Query Optimization</span></div>
+      <div class="kpi"><strong>12+ Automated Reports</strong><span>Daily &amp; Monthly Financial Close (P&amp;L, Delivery P&amp;L, GL, AR, Tax)</span></div>
+      <div class="kpi"><strong>3-Way Match &amp; Audit</strong><span>Automated PO vs. GRN vs. Invoice, Consignment &amp; Waste Control</span></div>
     </section>
 
     <div class="section-head">
-      <span>Production Case Studies &amp; Engineering Architecture</span>
-      <span class="section-note">Privacy-Safe Documentation &bull; Architecture &amp; Verified Real Outcomes Only</span>
+      <span>Production Case Studies &amp; Visual Architecture</span>
+      <span class="section-note">Privacy-Safe Showcases &bull; Real Systems, Architecture &amp; Verified Outcomes</span>
     </div>
 
     <section class="grid">
       
             <article class="cs-card">
-              <div class="cs-tag">CS-01 &bull; Python, MS Graph API (MSAL), Power Automate, openpyxl, SFTP (paramiko), smtplib</div>
-              <h3>Real-Time 1.5h Aggregator Stock Sync (OneDrive -&gt; MS Graph API -&gt; SFTP)</h3>
-              <p><strong>Problem:</strong> Once-daily manual branch stock uploads to InstaShop caused stale catalog availability, manual file handling overhead, and delayed store synchronization.</p>
-              <p><strong>Solution:</strong> Engineered a Power Automate + MS Graph API (MSAL) -&gt; Python (openpyxl) branch-code mapping validator -&gt; paramiko SFTP delivery service with automated OneDrive cleanup, packaged vs. bulk produce validation, and smtplib run/error email digests.</p>
-              <p class="impact"><strong>Impact:</strong> Cut aggregator stock sync SLA from 24 hours to 1.5 hours (16x faster refresh cycle) while eliminating manual file transfers completely (0.00 manual touches).</p>
+              <div class="cs-visual"><img src="visuals/cs01_instashop_sync.png" alt="InstaShop 1.5-Hour Automated Inventory Sync Pipeline" loading="lazy" /></div>
+              <div class="cs-body">
+                <div class="cs-tag">CS-01 &bull; Python, MS Graph API (MSAL), Power Automate, openpyxl, SFTP (paramiko), smtplib</div>
+                <h3>InstaShop 1.5-Hour Automated Inventory Sync Pipeline</h3>
+                <p><strong>What It Is:</strong> An unattended cloud-to-SFTP automation service that keeps branch product availability updated on InstaShop every 90 minutes.</p>
+                <p><strong>Problem:</strong> Manual once-daily branch Excel uploads created stale stock listings, manual formatting work, and delayed out-of-stock updates.</p>
+                <p><strong>Solution:</strong> Built a Power Automate + MS Graph API (MSAL) -&gt; Python (openpyxl) branch-code validator -&gt; paramiko SFTP pipeline with OneDrive staging cleanup, packaged vs. bulk produce checks, and smtplib error/log email alerts.</p>
+                <p class="impact"><strong>Impact:</strong> Cut sync cycle time from 24 hours to 1.5 hours (16x faster refresh) and eliminated manual spreadsheet uploads completely.</p>
+              </div>
             </article>
             <article class="cs-card">
-              <div class="cs-tag">CS-02 &bull; D365 F&amp;O (OData, BYOD, Dataflows), Python, Polars, DuckDB, MS SQL, MySQL</div>
-              <h3>D365 F&amp;O Multi-Entity Financial Close, P&amp;L &amp; Delivery P&amp;L Suite</h3>
-              <p><strong>Problem:</strong> Consolidating Daily and Monthly P&amp;L, Delivery P&amp;L, General Ledger (GL), Accounts Receivable (AR), and Tax Reports across Microsoft Dynamics 365 F&amp;O, MS SQL, and MySQL required slow, error-prone manual reconciliation.</p>
-              <p><strong>Solution:</strong> Architected repeatable Python (Polars LazyFrame + DuckDB + openpyxl) transformation pipelines extracting directly from Dynamics 365 F&amp;O (OData, BYOD, Dataflows) with automated 0.01-tolerance Control Tie-Out assertions and Dashboard_YYYY-MM-DD / Delivery_Dashboard workbooks.</p>
-              <p class="impact"><strong>Impact:</strong> Standardized 12+ daily &amp; monthly financial close, cost control, Household Sales, and Promotion/Magazine cycle workflows with 0.00 control drift.</p>
+              <div class="cs-visual"><img src="visuals/cs02_d365_financial_close.png" alt="Dynamics 365 F&amp;O Financial Close &amp; Delivery P&amp;L Automation Suite" loading="lazy" /></div>
+              <div class="cs-body">
+                <div class="cs-tag">CS-02 &bull; D365 F&amp;O (OData, BYOD, Dataflows), Python, Polars, DuckDB, MS SQL, MySQL, openpyxl</div>
+                <h3>Dynamics 365 F&amp;O Financial Close &amp; Delivery P&amp;L Automation Suite</h3>
+                <p><strong>What It Is:</strong> A unified Python ETL and automated Excel reporting engine powering daily and monthly financial close across retail branches.</p>
+                <p><strong>Problem:</strong> Extracting and merging P&amp;L, Delivery P&amp;L, General Ledger (GL), Accounts Receivable (AR), and Tax reports from D365 F&amp;O, MS SQL, and MySQL manually slowed down closing.</p>
+                <p><strong>Solution:</strong> Engineered repeatable Python (Polars &amp; DuckDB) pipelines pulling directly from Dynamics 365 F&amp;O (OData, BYOD, Dataflows) and SQL Server to generate standardized Dashboard_YYYY-MM-DD and Delivery_Dashboard workbooks automatically.</p>
+                <p class="impact"><strong>Impact:</strong> Automated 12+ daily and monthly finance/operations workflows including P&amp;L, GL, AR, Tax, Cost Control, Household Sales, and Promotion/Magazine cycle analytics.</p>
+              </div>
             </article>
             <article class="cs-card">
-              <div class="cs-tag">CS-03 &bull; DuckDB, Polars, SQL, 3-Way Match Reconciliation, Cost Control, Audit Tie-Out</div>
-              <h3>Automated 3-Way Match Reconciliation (PO vs. GRN vs. Invoice) &amp; Waste Audits</h3>
-              <p><strong>Problem:</strong> Direct many-to-many joins between Purchase Orders, Goods Receipt Notes (GRN), and Vendor Invoices caused Cartesian fan-out, masking unreceipted billing, quantity/price variances, and consignment settlement gaps.</p>
-              <p><strong>Solution:</strong> Implemented strict DuckDB &amp; Polars CTE grain pre-aggregation at (po_number, sku) before joining Receipts vs. Invoices alongside automated Daily Waste Report, Lost Sales Digest, Daily Stock Control, and Consignment Vendor Settlement audit checks.</p>
-              <p class="impact"><strong>Impact:</strong> Eliminated relational fan-out errors during procurement reconciliation and enforced zero-leakage tie-out audit readiness prior to AP payment release.</p>
+              <div class="cs-visual"><img src="visuals/cs03_3way_match_audit.png" alt="Automated 3-Way Match Procurement &amp; Retail Control Workbench" loading="lazy" /></div>
+              <div class="cs-body">
+                <div class="cs-tag">CS-03 &bull; DuckDB, Polars, SQL, 3-Way Match Reconciliation, Cost Control, Audit Automation</div>
+                <h3>Automated 3-Way Match Procurement &amp; Retail Control Workbench</h3>
+                <p><strong>What It Is:</strong> An automated procurement auditing system matching Purchase Orders (PO), Goods Receipts (GRN), and Vendor Invoices before payment.</p>
+                <p><strong>Problem:</strong> Manual invoice verification risked paying for unreceipted goods, unit-price overcharges, and missed vendor consignment discrepancies.</p>
+                <p><strong>Solution:</strong> Built DuckDB &amp; Polars pre-aggregation matching Receipts vs. Invoices at the (po_number, sku) level alongside automated Daily Waste Reports, Lost Sales Digests, Daily Stock Control, and Consignment Vendor Settlement audits.</p>
+                <p class="impact"><strong>Impact:</strong> Replaced manual invoice checks with automated exception flagging across procurement, inventory waste, and vendor consignment settlements.</p>
+              </div>
             </article>
             <article class="cs-card">
-              <div class="cs-tag">CS-04 &bull; Power BI, DAX, Star-Schema Data Modeling, MS SQL, MySQL, Power Query</div>
-              <h3>Power BI Star-Schema Restructuring &amp; DAX / SQL Performance Optimization</h3>
-              <p><strong>Problem:</strong> Legacy company-wide Power BI dashboards and complex SQL views suffered from slow refresh/rendering times across Finance, Marketing, and Operations KPI tracking.</p>
-              <p><strong>Solution:</strong> Redesigned relational star-schema data models, refactored bi-directional relationships, tuned MS SQL / MySQL queries, and rewrote heavy DAX measures using Microsoft Press / LinkedIn Learning best practices.</p>
-              <p class="impact"><strong>Impact:</strong> Improved Power BI and SQL report execution &amp; loading speeds by 60% across executive Finance, Marketing, and Operations KPI dashboards.</p>
+              <div class="cs-visual"><img src="visuals/cs04_powerbi_dax_speedup.png" alt="Power BI Star-Schema Restructuring &amp; DAX / SQL Optimization" loading="lazy" /></div>
+              <div class="cs-body">
+                <div class="cs-tag">CS-04 &bull; Power BI, DAX, Star-Schema Data Modeling, MS SQL, MySQL, Power Query</div>
+                <h3>Power BI Star-Schema Restructuring &amp; DAX / SQL Optimization</h3>
+                <p><strong>What It Is:</strong> A full performance overhaul of company-wide executive Power BI dashboards tracking Finance, Marketing, and Operations KPIs.</p>
+                <p><strong>Problem:</strong> Flat table models, heavy calculated columns, and unindexed SQL queries caused slow dashboard refreshes and sluggish visual interactions.</p>
+                <p><strong>Solution:</strong> Redesigned relational star-schema data models, pushed heavy joins into tuned MS SQL / MySQL views, and refactored complex DAX measures.</p>
+                <p class="impact"><strong>Impact:</strong> Accelerated Power BI and SQL report loading speeds by 60% for Finance, Marketing, and Operations leadership.</p>
+              </div>
             </article>
             <article class="cs-card">
-              <div class="cs-tag">CS-05 &bull; Python, Pandas, Scikit-learn, NumPy, POS Systems, Inventory Automation</div>
-              <h3>Sales Revenue Time-Series Forecasting &amp; End-to-End Retail Python POS Systems</h3>
-              <p><strong>Problem:</strong> Retail inventory budgeting needed reliable forward-looking demand signals, while small/medium retail shops needed lightweight end-to-end POS and stock control software.</p>
-              <p><strong>Solution:</strong> Built a Python (Pandas, Scikit-learn, NumPy) time-series revenue forecasting model (2025) and previously engineered standalone Python POS systems (2023–2025) automating sales ledger capture, inventory tracking, and receipt printing.</p>
-              <p class="impact"><strong>Impact:</strong> Delivered 95% time-series revenue forecasting accuracy for inventory &amp; budget allocation and deployed production-ready POS tools for retail operations.</p>
+              <div class="cs-visual"><img src="visuals/cs05_python_pos_system.png" alt="End-to-End Retail Python POS &amp; Inventory Management System" loading="lazy" /></div>
+              <div class="cs-body">
+                <div class="cs-tag">CS-05 &bull; Python, Retail POS, Inventory Tracking, Receipt Automation, Local SQL</div>
+                <h3>End-to-End Retail Python POS &amp; Inventory Management System</h3>
+                <p><strong>What It Is:</strong> A standalone Point-of-Sale (POS) and inventory tracking desktop application engineered for small and medium retail shops (2023–2025).</p>
+                <p><strong>Problem:</strong> Small retail shops lacked affordable software connecting checkout sales directly with live stock counts and daily cash-close reports.</p>
+                <p><strong>Solution:</strong> Designed and built a complete Python POS application covering barcode/SKU lookup, automated cart/tax calculation, real-time inventory deduction, and receipt printing.</p>
+                <p class="impact"><strong>Impact:</strong> Delivered reliable sales ledger capture, automated stock updates, and daily close reporting without recurring SaaS licensing fees.</p>
+              </div>
             </article>
     </section>
 
     <footer class="footer">
       <span>Yahia Hosny Yahia &bull; Giza, Egypt &bull; Target Markets: Egypt, GCC &amp; Europe</span>
-      <span>Architecture: D365 F&amp;O (OData/BYOD/Dataflows) &bull; Python (Polars/DuckDB/Pandas) &bull; Power BI (DAX)</span>
+      <span>Core Stack: D365 F&amp;O (OData / BYOD / Dataflows) &bull; Python (Polars / DuckDB / Pandas) &bull; Power BI (DAX) &bull; SQL</span>
     </footer>
   </div>
 </body>

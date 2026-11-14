@@ -1,33 +1,45 @@
-# Yahia Hosny Yahia — Executive Portfolio Case Studies (100% Real Verified Outcomes)
+# Yahia Hosny Yahia — Financial Data Analyst & Automation Portfolio
 **Role:** Financial Data Analyst & Python Data Automation Specialist | **Email:** Yahiahosny23@gmail.com | **Phone:** +20 115 676 1938 | **LinkedIn:** https://www.linkedin.com/in/yahia-hosny | **GitHub:** https://github.com/yahia-hosny | **Live Portfolio:** https://yahia-hosny.github.io/financial-data-analyst-portfolio/
 
+I build automated financial reporting pipelines, ERP data integrations (Microsoft Dynamics 365 F&O & SQL), interactive Power BI dashboards, and procurement/inventory reconciliation systems that eliminate manual spreadsheet work.
+
 ---
-## CS-01: Real-Time 1.5h Aggregator Stock Sync (OneDrive -> MS Graph API -> SFTP)
-- **Tech Stack & Grain Proof:** `Python, MS Graph API (MSAL), Power Automate, openpyxl, SFTP (paramiko), smtplib` | `(po_number, sku)` CTE grain pre-aggregation | Control Tie-Out `0.00 Drift`
-- **Problem:** Once-daily manual branch stock uploads to InstaShop caused stale catalog availability, manual file handling overhead, and delayed store synchronization.
-- **Solution:** Engineered a Power Automate + MS Graph API (MSAL) -> Python (openpyxl) branch-code mapping validator -> paramiko SFTP delivery service with automated OneDrive cleanup, packaged vs. bulk produce validation, and smtplib run/error email digests.
-- **Impact:** Cut aggregator stock sync SLA from 24 hours to 1.5 hours (16x faster refresh cycle) while eliminating manual file transfers completely (0.00 manual touches).
+## CS-01: InstaShop 1.5-Hour Automated Inventory Sync Pipeline
+![InstaShop 1.5-Hour Automated Inventory Sync Pipeline](visuals/cs01_instashop_sync.png)
+- **Tech Stack:** `Python, MS Graph API (MSAL), Power Automate, openpyxl, SFTP (paramiko), smtplib`
+- **What It Is:** An unattended cloud-to-SFTP automation service that keeps branch product availability updated on InstaShop every 90 minutes.
+- **Problem:** Manual once-daily branch Excel uploads created stale stock listings, manual formatting work, and delayed out-of-stock updates.
+- **Solution:** Built a Power Automate + MS Graph API (MSAL) -> Python (openpyxl) branch-code validator -> paramiko SFTP pipeline with OneDrive staging cleanup, packaged vs. bulk produce checks, and smtplib error/log email alerts.
+- **Impact:** Cut sync cycle time from 24 hours to 1.5 hours (16x faster refresh) and eliminated manual spreadsheet uploads completely.
 
-## CS-02: D365 F&O Multi-Entity Financial Close, P&L & Delivery P&L Suite
-- **Tech Stack & Grain Proof:** `D365 F&O (OData, BYOD, Dataflows), Python, Polars, DuckDB, MS SQL, MySQL` | `(po_number, sku)` CTE grain pre-aggregation | Control Tie-Out `0.00 Drift`
-- **Problem:** Consolidating Daily and Monthly P&L, Delivery P&L, General Ledger (GL), Accounts Receivable (AR), and Tax Reports across Microsoft Dynamics 365 F&O, MS SQL, and MySQL required slow, error-prone manual reconciliation.
-- **Solution:** Architected repeatable Python (Polars LazyFrame + DuckDB + openpyxl) transformation pipelines extracting directly from Dynamics 365 F&O (OData, BYOD, Dataflows) with automated 0.01-tolerance Control Tie-Out assertions and Dashboard_YYYY-MM-DD / Delivery_Dashboard workbooks.
-- **Impact:** Standardized 12+ daily & monthly financial close, cost control, Household Sales, and Promotion/Magazine cycle workflows with 0.00 control drift.
+## CS-02: Dynamics 365 F&O Financial Close & Delivery P&L Automation Suite
+![Dynamics 365 F&O Financial Close & Delivery P&L Automation Suite](visuals/cs02_d365_financial_close.png)
+- **Tech Stack:** `D365 F&O (OData, BYOD, Dataflows), Python, Polars, DuckDB, MS SQL, MySQL, openpyxl`
+- **What It Is:** A unified Python ETL and automated Excel reporting engine powering daily and monthly financial close across retail branches.
+- **Problem:** Extracting and merging P&L, Delivery P&L, General Ledger (GL), Accounts Receivable (AR), and Tax reports from D365 F&O, MS SQL, and MySQL manually slowed down closing.
+- **Solution:** Engineered repeatable Python (Polars & DuckDB) pipelines pulling directly from Dynamics 365 F&O (OData, BYOD, Dataflows) and SQL Server to generate standardized Dashboard_YYYY-MM-DD and Delivery_Dashboard workbooks automatically.
+- **Impact:** Automated 12+ daily and monthly finance/operations workflows including P&L, GL, AR, Tax, Cost Control, Household Sales, and Promotion/Magazine cycle analytics.
 
-## CS-03: Automated 3-Way Match Reconciliation (PO vs. GRN vs. Invoice) & Waste Audits
-- **Tech Stack & Grain Proof:** `DuckDB, Polars, SQL, 3-Way Match Reconciliation, Cost Control, Audit Tie-Out` | `(po_number, sku)` CTE grain pre-aggregation | Control Tie-Out `0.00 Drift`
-- **Problem:** Direct many-to-many joins between Purchase Orders, Goods Receipt Notes (GRN), and Vendor Invoices caused Cartesian fan-out, masking unreceipted billing, quantity/price variances, and consignment settlement gaps.
-- **Solution:** Implemented strict DuckDB & Polars CTE grain pre-aggregation at (po_number, sku) before joining Receipts vs. Invoices alongside automated Daily Waste Report, Lost Sales Digest, Daily Stock Control, and Consignment Vendor Settlement audit checks.
-- **Impact:** Eliminated relational fan-out errors during procurement reconciliation and enforced zero-leakage tie-out audit readiness prior to AP payment release.
+## CS-03: Automated 3-Way Match Procurement & Retail Control Workbench
+![Automated 3-Way Match Procurement & Retail Control Workbench](visuals/cs03_3way_match_audit.png)
+- **Tech Stack:** `DuckDB, Polars, SQL, 3-Way Match Reconciliation, Cost Control, Audit Automation`
+- **What It Is:** An automated procurement auditing system matching Purchase Orders (PO), Goods Receipts (GRN), and Vendor Invoices before payment.
+- **Problem:** Manual invoice verification risked paying for unreceipted goods, unit-price overcharges, and missed vendor consignment discrepancies.
+- **Solution:** Built DuckDB & Polars pre-aggregation matching Receipts vs. Invoices at the (po_number, sku) level alongside automated Daily Waste Reports, Lost Sales Digests, Daily Stock Control, and Consignment Vendor Settlement audits.
+- **Impact:** Replaced manual invoice checks with automated exception flagging across procurement, inventory waste, and vendor consignment settlements.
 
-## CS-04: Power BI Star-Schema Restructuring & DAX / SQL Performance Optimization
-- **Tech Stack & Grain Proof:** `Power BI, DAX, Star-Schema Data Modeling, MS SQL, MySQL, Power Query` | `(po_number, sku)` CTE grain pre-aggregation | Control Tie-Out `0.00 Drift`
-- **Problem:** Legacy company-wide Power BI dashboards and complex SQL views suffered from slow refresh/rendering times across Finance, Marketing, and Operations KPI tracking.
-- **Solution:** Redesigned relational star-schema data models, refactored bi-directional relationships, tuned MS SQL / MySQL queries, and rewrote heavy DAX measures using Microsoft Press / LinkedIn Learning best practices.
-- **Impact:** Improved Power BI and SQL report execution & loading speeds by 60% across executive Finance, Marketing, and Operations KPI dashboards.
+## CS-04: Power BI Star-Schema Restructuring & DAX / SQL Optimization
+![Power BI Star-Schema Restructuring & DAX / SQL Optimization](visuals/cs04_powerbi_dax_speedup.png)
+- **Tech Stack:** `Power BI, DAX, Star-Schema Data Modeling, MS SQL, MySQL, Power Query`
+- **What It Is:** A full performance overhaul of company-wide executive Power BI dashboards tracking Finance, Marketing, and Operations KPIs.
+- **Problem:** Flat table models, heavy calculated columns, and unindexed SQL queries caused slow dashboard refreshes and sluggish visual interactions.
+- **Solution:** Redesigned relational star-schema data models, pushed heavy joins into tuned MS SQL / MySQL views, and refactored complex DAX measures.
+- **Impact:** Accelerated Power BI and SQL report loading speeds by 60% for Finance, Marketing, and Operations leadership.
 
-## CS-05: Sales Revenue Time-Series Forecasting & End-to-End Retail Python POS Systems
-- **Tech Stack & Grain Proof:** `Python, Pandas, Scikit-learn, NumPy, POS Systems, Inventory Automation` | `(po_number, sku)` CTE grain pre-aggregation | Control Tie-Out `0.00 Drift`
-- **Problem:** Retail inventory budgeting needed reliable forward-looking demand signals, while small/medium retail shops needed lightweight end-to-end POS and stock control software.
-- **Solution:** Built a Python (Pandas, Scikit-learn, NumPy) time-series revenue forecasting model (2025) and previously engineered standalone Python POS systems (2023–2025) automating sales ledger capture, inventory tracking, and receipt printing.
-- **Impact:** Delivered 95% time-series revenue forecasting accuracy for inventory & budget allocation and deployed production-ready POS tools for retail operations.
+## CS-05: End-to-End Retail Python POS & Inventory Management System
+![End-to-End Retail Python POS & Inventory Management System](visuals/cs05_python_pos_system.png)
+- **Tech Stack:** `Python, Retail POS, Inventory Tracking, Receipt Automation, Local SQL`
+- **What It Is:** A standalone Point-of-Sale (POS) and inventory tracking desktop application engineered for small and medium retail shops (2023–2025).
+- **Problem:** Small retail shops lacked affordable software connecting checkout sales directly with live stock counts and daily cash-close reports.
+- **Solution:** Designed and built a complete Python POS application covering barcode/SKU lookup, automated cart/tax calculation, real-time inventory deduction, and receipt printing.
+- **Impact:** Delivered reliable sales ledger capture, automated stock updates, and daily close reporting without recurring SaaS licensing fees.
