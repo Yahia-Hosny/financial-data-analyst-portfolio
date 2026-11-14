@@ -19,9 +19,12 @@
     .cta:hover { transform: translateY(-1px); border-color: #38bdf8; }
     .cta.primary { background: #10b981; color: #052e16; border-color: #10b981; }
     .kpi-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 26px; }
-    .kpi { background: #0f172a; border: 1px solid #1e293b; border-radius: 14px; padding: 18px 20px; min-width: 0; }
-    .kpi strong { display: block; font-size: 1.45rem; color: #38bdf8; margin-bottom: 4px; }
-    .kpi span { font-size: 0.86rem; color: #94a3b8; }
+    .kpi { background: #0f172a; border: 1px solid #1e293b; border-top: 3px solid #38bdf8; border-radius: 14px; padding: 18px 20px; min-width: 0; }
+    .kpi.kpi-green { border-top-color: #10b981; }
+    .kpi-tag { display: block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #34d399; margin-bottom: 6px; }
+    .kpi strong { display: block; font-size: 1.4rem; color: #38bdf8; margin-bottom: 6px; line-height: 1.25; }
+    .kpi.kpi-green strong { color: #34d399; }
+    .kpi span { display: block; font-size: 0.88rem; color: #cbd5e1; line-height: 1.45; }
     .section-head { font-size: 1.15rem; font-weight: 700; color: #e2e8f0; margin: 0 0 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
     .section-note { font-size: 0.82rem; color: #94a3b8; font-weight: 500; }
     .grid { display: grid; grid-template-columns: 1fr; gap: 22px; margin-bottom: 28px; }
@@ -49,7 +52,7 @@
 <body>
   <div class="wrap">
     <section class="hero">
-      <div class="eyebrow">B.Sc. Mechatronics Engineering (Grade: A+) &bull; Microsoft Certified Power BI &amp; D365 F&amp;O</div>
+      <div class="eyebrow">B.Sc. Mechatronics Engineering (Graduation Project: Grade A+) &bull; Microsoft Certified Power BI &amp; D365 F&amp;O Specialist</div>
       <h1>Yahia Hosny Yahia — Financial Data Analyst &amp; Python Data Automation Specialist</h1>
       <div class="sub">I build automated financial reporting pipelines, ERP data integrations (Microsoft Dynamics 365 F&amp;O &amp; SQL), interactive Power BI dashboards, and procurement/inventory reconciliation systems that eliminate manual spreadsheet work.</div>
       <div class="cta-bar">
@@ -63,10 +66,10 @@
     </section>
 
     <section class="kpi-strip">
-      <div class="kpi"><strong>1.5 Hours (16x Faster)</strong><span>InstaShop Stock Sync (Reduced from 24h Daily Upload)</span></div>
-      <div class="kpi"><strong>60% Faster Loading</strong><span>Power BI Star-Schema DAX &amp; SQL Query Optimization</span></div>
-      <div class="kpi"><strong>12+ Automated Reports</strong><span>Daily &amp; Monthly Financial Close (P&amp;L, Delivery P&amp;L, GL, AR, Tax)</span></div>
-      <div class="kpi"><strong>3-Way Match &amp; Audit</strong><span>Automated PO vs. GRN vs. Invoice, Consignment &amp; Waste Control</span></div>
+      <div class="kpi kpi-green"><div class="kpi-tag">E-Commerce Stock Sync</div><strong>Every 1.5h (vs. 24h)</strong><span>Automated InstaShop branch stock updates via Python &amp; SFTP (16x more frequent than daily uploads)</span></div>
+      <div class="kpi"><div class="kpi-tag">BI &amp; SQL Performance</div><strong>60% Faster Reports</strong><span>Accelerated executive Power BI (DAX) dashboards &amp; SQL queries via star-schema modeling</span></div>
+      <div class="kpi"><div class="kpi-tag">ERP Financial Close</div><strong>12+ Automated Reports</strong><span>Daily &amp; monthly Dynamics 365 F&amp;O workflows (P&amp;L, Delivery P&amp;L, GL, AR, Tax &amp; Cost Control)</span></div>
+      <div class="kpi"><div class="kpi-tag">Procurement &amp; Audit</div><strong>Automated 3-Way Match</strong><span>PO vs. GRN vs. Invoice reconciliation, Consignment Vendor Settlement &amp; Daily Waste control</span></div>
     </section>
 
     <div class="section-head">
@@ -77,17 +80,17 @@
     <section class="grid">
       
             <article class="cs-card">
-              <div class="cs-visual" onclick="openLightbox('visuals/cs01_instashop_sync.png', 'InstaShop 1.5-Hour Automated Inventory Sync Pipeline')">
-                <img class="cs-img" src="visuals/cs01_instashop_sync.png" alt="InstaShop 1.5-Hour Automated Inventory Sync Pipeline" loading="lazy" />
+              <div class="cs-visual" onclick="openLightbox('visuals/cs01_instashop_sync.png', 'InstaShop Automated Branch Stock Sync Pipeline (Every 1.5 Hours)')">
+                <img class="cs-img" src="visuals/cs01_instashop_sync.png" alt="InstaShop Automated Branch Stock Sync Pipeline (Every 1.5 Hours)" loading="lazy" />
                 <span class="zoom-hint">Click visual to expand &nearrow;</span>
               </div>
               <div class="cs-body">
                 <div class="cs-tag">CS-01 &bull; Python, MS Graph API (MSAL), Power Automate, openpyxl, SFTP (paramiko), smtplib</div>
-                <h3>InstaShop 1.5-Hour Automated Inventory Sync Pipeline</h3>
-                <p><strong>What It Is:</strong> An unattended cloud-to-SFTP automation service that keeps branch product availability updated on InstaShop every 90 minutes.</p>
-                <p><strong>Problem:</strong> Manual once-daily branch Excel uploads created stale stock listings, manual formatting work, and delayed out-of-stock updates.</p>
+                <h3>InstaShop Automated Branch Stock Sync Pipeline (Every 1.5 Hours)</h3>
+                <p><strong>What It Is:</strong> An unattended cloud-to-SFTP automation service that updates branch product availability and stock levels on InstaShop automatically every 1.5 hours.</p>
+                <p><strong>Problem:</strong> Staff had to manually format and upload Excel files only once every 24 hours, leaving branch stock outdated throughout the day.</p>
                 <p><strong>Solution:</strong> Built a Power Automate + MS Graph API (MSAL) -&gt; Python (openpyxl) branch-code validator -&gt; paramiko SFTP pipeline with OneDrive staging cleanup, packaged vs. bulk produce checks, and smtplib error/log email alerts.</p>
-                <p class="impact"><strong>Impact:</strong> Cut sync cycle time from 24 hours to 1.5 hours (16x faster refresh) and eliminated manual spreadsheet uploads completely.</p>
+                <p class="impact"><strong>Impact:</strong> Automated InstaShop stock updates to run every 1.5 hours instead of once every 24 hours (16x more frequent inventory updates) with zero manual spreadsheet uploads.</p>
               </div>
             </article>
             <article class="cs-card">
